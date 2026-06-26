@@ -14,6 +14,7 @@ import {
   sponsorSupporters,
   sponsorBenefits,
   sponsorTiers,
+  sponsoredEvents,
 } from "@/data/sponsors";
 import { siteConfig } from "@/data/site";
 import { createMetadata } from "@/lib/seo";
@@ -66,6 +67,30 @@ export default function SponsorshipPage() {
             ))}
           </Marquee>
         </Reveal>
+      </SectionContainer>
+
+      {/* Previously sponsored events */}
+      <SectionContainer spacing="md" width="wide">
+        <SectionHeader
+          align="center"
+          label="Past partnerships"
+          title="Previously sponsored events"
+          description="A snapshot of the recruiting and career programming our partners have powered."
+        />
+        <Stagger className="mt-12 grid gap-5 sm:grid-cols-3">
+          {sponsoredEvents.map((event) => (
+            <StaggerItem key={event.title} className="h-full">
+              <GlassCard interactive className="flex h-full flex-col gap-3 p-7">
+                <span className="text-xs font-medium uppercase tracking-[0.16em] text-accent">
+                  with {event.partner}
+                </span>
+                <h3 className="text-lg font-semibold text-foreground">
+                  {event.title}
+                </h3>
+              </GlassCard>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </SectionContainer>
 
       {/* Why sponsor */}

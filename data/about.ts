@@ -33,7 +33,7 @@ export const objectives: ValueItem[] = [
 
 export const stats: StatItem[] = [
   { value: "5,000+", label: "CS students represented" },
-  { value: "9", label: "Executive portfolios" },
+  { value: "10", label: "Executive members" },
   { value: "40+", label: "General council members" },
   { value: "24/7", label: "Student community" },
 ];

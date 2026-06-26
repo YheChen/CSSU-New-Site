@@ -1,39 +1,50 @@
-import { Users, Sparkles, Target, HeartHandshake } from "lucide-react";
+import { Users, Briefcase, FileText, HeartHandshake } from "lucide-react";
 import type { SponsorTierInfo, SponsorBenefit, Partner } from "@/types";
 
 export const sponsorIntro =
-  "Partnering with the CSSU connects your organization with one of the largest, most engaged computer science communities in Canada — over 5,000 students at the University of Toronto's St. George campus.";
+  "Partnering with the CSSU connects your organization with one of the largest, most engaged computer science communities in Canada — over 5,000 students at the University of Toronto's St. George campus, consistently ranked the top university in Canada.";
 
 export const sponsorSupporters: Partner[] = [
   { name: "Arts & Science Students' Union", initials: "ASSU" },
   { name: "Department of Computer Science", initials: "DCS" },
-  { name: "CS Innovation Lab", initials: "DCSIL" },
-  { name: "The Union Store", initials: "BA2250" },
+  { name: "The Office Store", initials: "BA2250" },
+];
+
+export interface SponsoredEvent {
+  title: string;
+  partner: string;
+}
+
+/** Real events from the 2025–2026 sponsorship package. */
+export const sponsoredEvents: SponsoredEvent[] = [
+  { title: "Resume Review Panel", partner: "Dayforce" },
+  { title: "Technical Career Workshop", partner: "Google" },
+  { title: "Annual Recruitment Breakfast", partner: "CSSU" },
 ];
 
 export const sponsorBenefits: SponsorBenefit[] = [
   {
     title: "Reach 5,000+ students",
     description:
-      "Get in front of the entire CS community through our events, newsletter, social channels, and the BA2250 lounge.",
+      "Get in front of every student enrolled in CS programs and courses at UofT St. George — at career fairs, events, and beyond.",
     icon: Users,
-  },
-  {
-    title: "Build your brand on campus",
-    description:
-      "Premium placement across our website and at flagship events keeps your organization top of mind all year.",
-    icon: Sparkles,
   },
   {
     title: "Recruit top talent",
     description:
-      "Run info sessions, tech talks, and recruiting drives that put your roles in front of motivated candidates.",
-    icon: Target,
+      "Meet motivated students and new grads at our career events, with access to a resume book of roughly 350 submissions.",
+    icon: FileText,
+  },
+  {
+    title: "Host your own events",
+    description:
+      "Run exclusive, customized sessions — from technical workshops to interview screenings — tailored to your hiring goals.",
+    icon: Briefcase,
   },
   {
     title: "Support the community",
     description:
-      "Your contribution directly funds events, resources, and the student lounge that the whole community relies on.",
+      "Your partnership directly funds the events, resources, and student lounge the whole CS community relies on.",
     icon: HeartHandshake,
   },
 ];
@@ -42,54 +53,48 @@ export const sponsorTiers: SponsorTierInfo[] = [
   {
     tier: "bronze",
     name: "Bronze",
-    price: "$250",
-    blurb: "Get on the radar of the CS community.",
+    price: "$600+",
+    blurb: "Get in front of the CS community.",
     accent: "bronze",
     benefits: [
-      "Logo on the CSSU sponsors page",
-      "Shout-out in our newsletter",
-      "Thank-you across our social channels",
+      "Admission to 1 career fair or networking event",
+      "Promotion of your company and opportunities to students and new grads at events",
     ],
   },
   {
     tier: "silver",
     name: "Silver",
-    price: "$500",
-    blurb: "Grow your presence with the community.",
+    price: "$1,000+",
+    blurb: "Recruit and grow your brand on campus.",
     accent: "silver",
+    featured: true,
     benefits: [
-      "Everything in Bronze",
-      "Logo featured at one CSSU event",
-      "A dedicated social media post",
-      "Share one opportunity with our mailing list",
+      "All Bronze benefits",
+      "Admission to all career events, plus the opportunity to host one exclusive, customized event",
+      "Access to our resume book — roughly 350 submissions from students and new grads",
     ],
   },
   {
     tier: "gold",
     name: "Gold",
-    price: "$1,000",
-    blurb: "Recruit and build brand affinity on campus.",
+    price: "$2,250+",
+    blurb: "Screen and connect with top candidates.",
     accent: "gold",
-    featured: true,
     benefits: [
-      "Everything in Silver",
-      "Branding at our flagship networking night",
-      "A speaking slot or info session",
-      "Candidate access for one recruiting term",
+      "All Silver benefits",
+      "Dedicated interview rooms at career events for one-on-one student screening",
     ],
   },
   {
     tier: "platinum",
     name: "Platinum",
-    price: "$2,500",
+    price: "$3,000+",
     blurb: "Become a defining partner of the CSSU.",
     accent: "platinum",
     benefits: [
-      "Everything in Gold",
-      "Title sponsorship of a flagship event",
-      "Premium logo placement on site & in the lounge",
-      "Two info sessions or tech talks per year",
-      "First access to recruit from 5,000+ students",
+      "All Gold benefits",
+      "Opportunity to host multiple exclusive, customized events",
+      "Year-round promotion of your company and opportunities to students and new grads",
     ],
   },
 ];

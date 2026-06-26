@@ -16,7 +16,7 @@ export const siteConfig = {
     "The Computer Science Student Union represents over 5,000 computer science students at the University of Toronto's St. George campus — building community, advocating for students, and creating opportunities.",
   url: "https://cssu.ca",
   email: "cssu@cdf.toronto.edu",
-  executiveEmail: "executive@cssu.ca",
+  executiveEmail: "utcssu@gmail.com",
   address: "Room BA2250, Bahen Centre for Information Technology",
   studentCount: "5,000+",
   constitutionUrl: "https://cssu.ca/constitution.pdf",

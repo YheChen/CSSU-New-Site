@@ -37,7 +37,7 @@ export function SponsorInquiryForm() {
       organization: "",
       name: "",
       email: "",
-      tier: "Gold",
+      tier: "Silver",
       message: "",
     },
   });
