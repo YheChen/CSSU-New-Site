@@ -16,13 +16,11 @@ interface AsciiBackdropProps {
   className?: string;
 }
 
-// Vertically centered so the (near-square) logo is never clipped top/bottom;
-// nudged inward from the edge so the full mark stays on-screen.
 const positions: Record<AsciiPosition, string> = {
-  right: "top-1/2 right-0 -translate-y-1/2 -translate-x-[3%]",
-  left: "top-1/2 left-0 -translate-y-1/2 translate-x-[3%]",
-  "top-right": "top-1/2 right-0 -translate-y-1/2 -translate-x-[3%]",
-  "bottom-left": "top-1/2 left-0 -translate-y-1/2 translate-x-[3%]",
+  right: "top-1/2 right-0 -translate-y-1/2 translate-x-[5%]",
+  left: "top-1/2 left-0 -translate-y-1/2 -translate-x-[5%]",
+  "top-right": "top-0 right-0 -translate-y-[6%] translate-x-[10%]",
+  "bottom-left": "bottom-0 left-0 translate-y-[6%] -translate-x-[10%]",
   center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
 };
 
@@ -47,16 +45,14 @@ export function AsciiBackdrop({
     <div
       aria-hidden
       className={cn(
-        "pointer-events-none absolute inset-0 -z-10 select-none overflow-hidden mask-fade-y [container-type:size]",
+        "pointer-events-none absolute inset-0 -z-10 select-none overflow-hidden mask-fade-y",
         className,
       )}
     >
       <pre
         className={cn(
           "absolute m-0 whitespace-pre font-mono leading-[1.05] tracking-tight text-tint",
-          // Sized to the section's own height (container-query units) so the full
-          // ~square logo fits; capped by width on narrow screens and an absolute max.
-          "text-[min(0.78cqh,1.28cqw,0.72rem)]",
+          "text-[clamp(0.32rem,1.2vw,0.8rem)]",
           intensities[intensity],
           positions[position],
         )}
